@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMovies } from '../../../services/serviceData';
 import CloseIcon from '@mui/icons-material/Close';
-
 import '../Programs.css';
 
 interface Movie {
@@ -27,6 +26,7 @@ const MovieList: React.FC = () => {
       .filter((item: Movie) => item.releaseYear >= 2010 && item.programType === 'movie')
       .sort((a, b) => a.title.localeCompare(b.title))
       .slice(0, 20);
+console.log(filteredData);
 
     setMoviesData(filteredData);
   }, []);

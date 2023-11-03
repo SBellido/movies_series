@@ -902,11 +902,11 @@ const database = {
 }
 
 const getMovies = () => {
-  return database.entries.filter(item => item.programType === 'película').slice(0, 20);
+  return database.entries.filter(item => item.programType === 'movie').slice(0, 20);
 };
 
 const getSeries = () => {
-  return database.entries.filter(item => item.programType === 'serie').slice(0, 20);
+  return database.entries.filter(item => item.programType === 'series').slice(0, 20);
 };
 
 export {
