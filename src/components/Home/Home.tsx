@@ -10,7 +10,7 @@ function Home() {
           <h2>Go to Series Page</h2>
         </div>
       </Link>
-      <Link to="/movies">
+      <Link to="/movie">
         <div>
           <h2>Go to Movies Page</h2>
         </div>

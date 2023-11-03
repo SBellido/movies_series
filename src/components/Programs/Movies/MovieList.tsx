@@ -1,37 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { getMovies } from '../../../services/serviceData';
 import CloseIcon from '@mui/icons-material/Close';
+import { Program } from '../../../interfaces/interfaces';
 import '../Programs.css';
 
-interface Movie {
-  title: string;
-  releaseYear: number;
-  programType: string;
-  images: {
-    'Poster Art': {
-      url: string;
-    };
-  };
-  description: string;
-}
-
 const MovieList: React.FC = () => {
-  const [moviesData, setMoviesData] = useState<Movie[]>([]);
+  const [moviesData, setMoviesData] = useState<Program[]>([]);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [movieSelected, setMovieSelected] = useState<Movie | null>(null);
+  const [movieSelected, setMovieSelected] = useState<Program | null>(null);
 
   useEffect(() => {
     const data = getMovies();
     const filteredData = data
-      .filter((item: Movie) => item.releaseYear >= 2010 && item.programType === 'movie')
+      .filter((item: Program) => item.releaseYear >= 2010 && item.programType === 'movie')
       .sort((a, b) => a.title.localeCompare(b.title))
       .slice(0, 20);
-console.log(filteredData);
-
-    setMoviesData(filteredData);
+      setMoviesData(filteredData);
   }, []);
 
-  const openModal = (movie: Movie) => {
+  const openModal = (movie: Program) => {
     setMovieSelected(movie);
     setModalOpen(true);
   };

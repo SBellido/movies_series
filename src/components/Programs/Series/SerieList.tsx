@@ -1,36 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { getSeries } from '../../../services/serviceData';
 import CloseIcon from '@mui/icons-material/Close';
+import { Program } from '../../../interfaces/interfaces';
 import '../Programs.css';
 
-interface Serie {
-  title: string;
-  releaseYear: number;
-  programType: string;
-  images: {
-    'Poster Art': {
-      url: string;
-    };
-  };
-  description: string;
-}
-
 const SerieList: React.FC = () => {
-  const [seriesData, setSeriesData] = useState<Serie[]>([]);
+  const [seriesData, setSeriesData] = useState<Program[]>([]);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [serieSelected, setSerieSelected] = useState<Serie | null>(null);
+  const [serieSelected, setSerieSelected] = useState<Program | null>(null);
 
   useEffect(() => {
     const data = getSeries();
     const filteredData = data
-      .filter((item: Serie) => item.releaseYear >= 2010 && item.programType === 'series')
+      .filter((item: Program) => item.releaseYear >= 2010 && item.programType === 'series')
       .sort((a, b) => a.title.localeCompare(b.title))
       .slice(0, 20);
 
     setSeriesData(filteredData);
   }, []);
 
-  const openModal = (serie: Serie) => {
+  const openModal = (serie: Program) => {
     setSerieSelected(serie);
     setModalOpen(true);
   };

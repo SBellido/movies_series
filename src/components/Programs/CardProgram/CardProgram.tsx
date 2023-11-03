@@ -1,18 +1,8 @@
-import React, { useState } from 'react';
-
-interface CardProgramProps {
-  image: { url: string };
-  title: string;
-  description: string;
-  releaseYear: string;
-}
+import { useState } from 'react';
+import { CardProgramProps } from '../../../interfaces/interfaces';
 
 function CardProgram(props: CardProgramProps) {
   const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
 
   const closeModal = () => {
     setModalOpen(false);
