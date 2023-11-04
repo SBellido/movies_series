@@ -29,7 +29,7 @@
     border: .3px solid gray;
   }
   .Containar-title--product {
-    min-height: 100px;
+    min-height: 40px;
   }
   p {
     margin-block-start: 0;
@@ -60,9 +60,9 @@
     opacity: .5;
     border: solid .3s, white;
   }
-  .Grid-item:hover span {
-    font-weight: 600;
-  }
+  /* .Grid-item:hover span {
+    font-weight: 400;
+  } */
 
   /*Cuadro emergente*/
   .Container-close--modal {
@@ -77,7 +77,8 @@
     height: 100%;
     width: 100%;
   }
-  .Modal-container {
+  /* .Modal-container  */
+  .modal {
     width: 530px;
     height: 390px;
     position: fixed;
