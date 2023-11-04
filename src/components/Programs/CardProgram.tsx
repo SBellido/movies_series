@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CardProgramProps } from '../../../interfaces/interfaces';
+import { CardProgramProps } from '../../interfaces/interfaces';
 
 function CardProgram(props: CardProgramProps) {
   const [modalOpen, setModalOpen] = useState(false);

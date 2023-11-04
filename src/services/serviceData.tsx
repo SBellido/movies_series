@@ -899,17 +899,7 @@ const database = {
       "releaseYear": 2016
     }
   ]
-}
-
-const getMovies = () => {
-  return database.entries.filter(item => item.programType === 'movie').slice(0, 20);
 };
 
-const getSeries = () => {
-  return database.entries.filter(item => item.programType === 'series').slice(0, 20);
-};
+export { database };
 
-export {
-  getSeries, 
-  getMovies
-};

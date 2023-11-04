@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div>
+    <>
       <h1>Inicio</h1>
       <Link to="/series">
         <div>
@@ -15,7 +15,7 @@ function Home() {
           <h2>Go to Movies Page</h2>
         </div>
       </Link>
-    </div>
+    </>
   );
 }
 

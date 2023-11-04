@@ -29,7 +29,7 @@
 // export { IconTypes };
 
 // IconTypes.tsx
-import React, { FC, ReactNode, ReactEventHandler } from 'react';
+import { FC, ReactNode, ReactEventHandler } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface IconTypesProps {

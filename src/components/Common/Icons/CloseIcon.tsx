@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IconTypes } from './IconTypes';
-import { CloseIconProps } from '../../interfaces/interfaces';
+import { CloseIconProps } from '../../../interfaces/interfaces';
 
 const CloseIcon: FC<CloseIconProps> = ({ onClose }) => {
   return (
