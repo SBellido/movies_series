@@ -27,7 +27,7 @@ const Programs: React.FC<{ programType: string }> = ({ programType }) => {
         <div className="Grid-item" key={item.title} onClick={() => handleOpenModal(item)}>
           <img className="Image-product" alt={item.title} src={item.images['Poster Art'].url} />
           <div className="Containar-title--product">
-            <p>
+            <p className='Title'>
               <span>{item.title}</span>
             </p>
           </div>
@@ -47,10 +47,12 @@ const Programs: React.FC<{ programType: string }> = ({ programType }) => {
       >
         <Fade in={selectedProgram !== null}>
           <div className="modal">
-            <img className="Image-product" alt={selectedProgram?.title} src={selectedProgram?.images['Poster Art'].url} />
-            <h2 id="transition-modal-title">{selectedProgram?.title}</h2>
-            <p id="transition-modal-description">{selectedProgram?.releaseYear}</p>
-            <p id="transition-modal-description">{selectedProgram?.description}</p>
+            <img className="Image-modal" alt={selectedProgram?.title} src={selectedProgram?.images['Poster Art'].url} />
+            <div className="Contenier-info--modal">
+              <h3 id="transition-modal-title">{selectedProgram?.title}</h3>
+              <p id="transition-modal-description">Año: {selectedProgram?.releaseYear}</p>
+              <p id="transition-modal-description">{selectedProgram?.description}</p>
+            </div>
             <Button onClick={handleCloseModal}>Close</Button>
           </div>
         </Fade>
